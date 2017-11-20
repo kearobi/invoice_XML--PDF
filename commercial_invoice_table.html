@@ -1,0 +1,208 @@
+
+<head>
+    <style>
+    .table-container
+    {
+        max-width: 100%;
+        margin-top: 25px;
+    }
+    table
+    {
+        font-size: 15px;
+        width: 100%;
+        padding: 10px;
+        padding-right: 0px;
+        padding-left: 0px;
+        /*margin-bottom: 5px;*/
+    }
+    img
+    {
+        width: 400px;
+        height: 175px;
+        padding: 10px;
+    }
+    .bold
+    {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .logo
+    {
+        width: 10%;
+        padding: 0px;
+    }
+    .invoice_list
+    {
+        border: 1px solid black;
+        text-align: left;
+        padding: 10px;
+    }
+    .invoice_body
+    {
+        padding-bottom: 14px;
+    }
+    .address
+    {
+        border: 1px solid black;
+        text-align: left;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .ship-from
+    {
+        line-height: 10px;
+        padding: 5px;
+        padding-top: 10px;
+        /*float: left;*/
+    }
+    .ship-to
+    {
+        line-height: 10px;
+        padding: 5px;
+        padding-top: 10px;
+        /*float: right;*/
+    }
+    .col_width
+    {
+        width: 29%;
+    }
+    .col_width_xsm
+    {
+        width: 5%;
+    }
+    .col_width_sm
+    {
+        width: 12%;
+    }
+    .col_width_mid
+    {
+        width: 16%;
+    }
+    .col_width_md
+    {
+        width: 25%;
+    }
+    .col_width_offset
+    {
+        width: 75%;
+    }
+    .col_width_full
+    {
+        width: 100%;
+    }
+    .align-left
+    {
+        text-align: left;
+    }
+    .align-right
+    {
+        text-align: right;
+    }
+    .align-center
+    {
+        text-align: center;
+    }
+    .categories th
+    {
+        border-bottom: 1px solid black;
+    }
+    .total_row
+    {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        padding: 5px;
+    }
+    </style>
+</head>
+    <body size='letter-landscape'>
+        <div class='table-container'>
+            <table><tr>
+                <td class='logo'>
+                    <img src='@@IMG@@'></img>
+                </td>
+                <td>
+            <table class="invoice_list">
+                <tbody class='invoice_body'>
+                    <tr>
+                        <th class='bold'>COMMERCIAL INVOICE</th>
+                    </tr>
+                    <tr>
+                        <th class='bold'>Invoice:</th>
+                        <td>@@INVOICENUMBER@@</td>
+                    </tr>
+                    <tr>
+                        <th class='bold'>Requisition:</th>
+                        <td>@@REQUISITION@@</td>
+                    </tr>
+                    <tr>
+                        <th class='bold'>Page:</th>
+                        <td>1 of 1</td>
+                    </tr>
+                    <tr>
+                        <th class='bold'>Date:</th>
+                        <td>@@INVOICEDATE@@</td>
+                    </tr>
+                    <tr>
+                        <th class='bold'>Number of Pieces:</th>
+                        <td>@@PIECES@@</td>
+                    </tr>
+                    <tr>
+                        <th class='bold'>Total gross Weight(LBS):</th>
+                        <td>@@TOTALGROSSWEIGHT@@</td>
+                    </tr>
+                    <tr>
+                        <th class='bold'>Total Net Weight(LBS):</th>
+                        <td>@@TOTALNETWEIGHT@@</td>
+                    </tr>
+                    <tr>
+                        <th class='bold'>Terms of Sale:</th>
+                        <td>@@TERMS@@</td>
+                    </tr>
+                    <tr>
+                        <th class='bold'>Carrier:</th>
+                        <td>@@CARRIER@@</td>
+                    </tr>
+                    <tr>
+                        <th class='bold'>Tracking Number:</th>
+                        <td>@@TRACKINGNUMBERS@@</td>
+                    </tr>
+                </tbody>
+            </table></td>
+        </tr></table>
+        <table class='address'>
+            <tr>
+                <th class='bold'>Sent By</th>
+                <th class='bold'>Consignee</th>
+            </tr>
+            <tr>
+                <td class='col_width_full'>@@SHIPFROM@@</td>
+                <td class='col_width_full'>@@SHIPTO@@</td>
+            </tr>
+        </table>
+        <table class='invoice_items_categories'>
+            <thead>
+                <tr class='categories'>
+                    <th class='bold col_width_xsm'>Part Number</th>
+                    <th class='bold col_width_sm'>Description</th>
+                    <th class='bold align-center'>Customs Commodity Code</th>
+                    <th class='bold align-center'>Country of Origin</th>
+                    <th class='bold align-center'>Qty</th>
+                    <th class='bold align-right'>Unit Value</th>
+                    <th class='bold align-right'>Subtotal Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                @@ITEMROWS@@
+                <tr class='total_row'>
+                    <td class='align-left bold'>CURRENCY</td>
+                    <td class='align-left'>@@CURRENCY@@</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class='align-right bold'>Total Value</td>
+                    <td class='align-right'>@@TOTALVALUE@@</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
